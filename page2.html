@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSA Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            color: #274863;
+            margin-bottom: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        form div {
+            margin-bottom: 15px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .bold-label {
+            font-size: large;
+            font-weight: bold;
+        }
+        .bold-title {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        form input[type="checkbox"] {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .option-border {
+            border: 2px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .checkbox-title {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .checkbox-desc {
+            font-size: 0.9em;
+            color: #555;
+            display: block;
+            margin-left: 28px; /* Align with checkbox text */
+        }
+        button {
+            background-color: #ccc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: not-allowed;
+        }
+        button.enabled {
+            background-color: #003366;
+            cursor: pointer;
+        }
+        button.enabled:hover {
+            background-color: #00509e;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <header>
+            <h1>Apply for Social Security Benefits</h1>
+        </header>
+        <!-- Question 1 -->
+        <div>
+            <label class="bold-title">Who do you want to apply for?</label>
+            <label><input type="radio" name="applicant" value="adult" checked> An adult (age 18 and over)</label>
+            <label><input type="radio" name="applicant" value="child"> A child (under age 18)</label>
+        </div>
+
+        <!-- Question 2 -->
+        <div>
+						<label class="bold-title">What do you want to apply for?</label>
+            <div>
+                <label class="bold-label">Benefits</label>
+
+                <label class="option-border">
+                    <input type="checkbox" name="benefit-type" value="retirement">
+                    <span class="checkbox-title">Retirement</span>
+                    <span class="checkbox-desc">You worked and paid Social Security taxes.</span>
+                </label>
+
+                <label class="option-border">
+                    <input type="checkbox" name="benefit-type" value="disability">
+                    <span class="checkbox-title">Family</span>
+                    <span class="checkbox-desc">Your current or ex-spouse worked and paid Social Security taxes.</span>
+                </label>
+
+								<label class="option-border">
+									<input type="checkbox" name="benefit-type" value="disability">
+									<span class="checkbox-title">Disability</span>
+									<span class="checkbox-desc">You have a condition and expect it to affect your ability to work for a year or more or will result in death.</span>
+							</label>
+
+							<label class="option-border">
+								<input type="checkbox" name="benefit-type" value="disability">
+								<span class="checkbox-title">Survivor</span>
+								<span class="checkbox-desc">Your spouse or ex-spouse worked and paid Social Security taxes before they died.</span>
+						</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div>
+                <label class="bold-label">Supplemental Security Income</label>
+
+                <label class="option-border">
+                    <input type="checkbox" name="benefit-type" value="retirement">
+                    <span class="checkbox-title">Supplemental Security Income for Disability</span>
+                    <span class="checkbox-desc">You're blind or have a disability. And it's hard to pay for essentials like food, clothing, and a home.</span>
+                </label>
+
+								<label class="option-border">
+									<input type="checkbox" name="benefit-type" value="retirement">
+									<span class="checkbox-title">Supplemental Security Income for Age 65+</span>
+									<span class="checkbox-desc">You’re 65 or older. And it's hard to pay for essentials like food, clothing, and a home.</span>
+							</label>
+            </div>
+        </div>
+
+        <button type="submit" id="submit-button">Learn how to apply</button>
+    </form>
+
+		<script>
+			const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+			const submitButton = document.getElementById('submit-button');
+
+			// Enable or disable the submit button based on checkbox state
+			const updateButtonState = () => {
+					const isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+					if (isChecked) {
+							submitButton.disabled = false;
+							submitButton.classList.add('enabled');
+					} else {
+							submitButton.disabled = true;
+							submitButton.classList.remove('enabled');
+					}
+			};
+
+			// Attach event listeners to all checkboxes
+			checkboxes.forEach(checkbox => {
+					checkbox.addEventListener('change', updateButtonState);
+			});
+		</script>
+</body>
+</html>

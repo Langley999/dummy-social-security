@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSA Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+				#website-name {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 200px;
+        }
+				nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        nav a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .sign-in {
+            border: white 3px solid;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .sign-in:hover {
+            background-color: #0076d6;
+        }
+        main {
+            padding: 20px;
+        }
+				.center {
+						text-align: center;
+				}
+        .section-box {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .section {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            width: 300px;
+            background: #f9f9f9;
+        }
+        .section h3 {
+            margin-top: 0;
+        }
+        .section a {
+            display: block;
+            margin-bottom: 10px;
+            color: #003366;
+            text-decoration: none;
+        }
+        .section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+						<span id="website-name">Dummy Social Security</span>
+            <a href="#">Benefits</a>
+            <a href="#">Medicare</a>
+            <a href="#">Card & record</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+            <a href="#" class="sign-in">Sign in</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="center">Securing your today and tomorrow</h1>
+
+        <div class="section-box">
+            <!-- Prepare Section -->
+            <div class="section">
+                <h3>Prepare</h3>
+                <a href="#">Check eligibility for benefits</a>
+                <a href="#">Get a benefits statement</a>
+                <a href="#">Plan for retirement</a>
+            </div>
+
+            <!-- Apply Section -->
+            <div class="section">
+                <h3>Apply</h3>
+                <a href="page2.html">Apply for benefits</a>
+                <a href="#">Sign up for Medicare</a>
+                <a href="#">Apply for SSI</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
